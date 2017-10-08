@@ -1,38 +1,23 @@
 package com.twins.mymoviedatabase
 
-import android.content.Context
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.content.SharedPreferences
-import android.widget.Toast
-import javax.inject.Inject
+import com.twins.mymoviedatabase.util.toastLong
+import com.twins.mymoviedatabase.util.unwrap
 
-
-
-
-class MainActivity : AppCompatActivity() {
-
-
-    @Inject lateinit var prefs: SharedPreferences
-
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        (application as MyMovieDatabaseApplication).component.inject(this)
+        MyMovieDatabaseApplication.get()
 
-        if (prefs == null) {
-            makeToastLong(baseContext,"TABLE FLIP")
-
-        } else {
-            makeToastLong(baseContext,"PREF TIDAK NULL HORE")
+        unwrap(prefs) {
+            toastLong("PREF TIDAK NULL HORE")
+        } otherwise {
+            toastLong("TABLE FLIP")
         }
 
+        toastLong("realm is " + realm)
     }
-}
-
-
-fun makeToastLong(context: Context, str: String) {
-    Toast.makeText(context,str, Toast.LENGTH_LONG).show()
 }
