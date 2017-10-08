@@ -29,3 +29,5 @@ src/main/res/values/com_crashlytics_export_strings.xml
 *.BASE.*
 *.LOCAL.*
 *.REMOTE.*
+.idea/instapk.xml
+instapk.log*
