@@ -3,7 +3,7 @@ package com.twins.mymoviedatabase.injection.module
 import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
-import com.twins.mymoviedatabase.MyMovieDatabaseApplication
+import com.twins.mymoviedatabase.App
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -14,7 +14,7 @@ import javax.inject.Singleton
  */
 @Singleton
 @Module
-class ApplicationModule(private val application: MyMovieDatabaseApplication) {
+class ApplicationModule(private val application: App) {
 
     @Provides @Singleton
     fun provideContext(): Context = application

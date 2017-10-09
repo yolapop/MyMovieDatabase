@@ -9,7 +9,7 @@ import io.realm.Realm
 /**
  * Created by Ridwan Arvihafiz on 9/29/17.
  */
-class MyMovieDatabaseApplication : DaggerApplication() {
+class App : DaggerApplication() {
 
     override fun onCreate() {
         super.onCreate()
@@ -25,8 +25,8 @@ class MyMovieDatabaseApplication : DaggerApplication() {
     }
 
     companion object {
-        private lateinit var INSTANCE: MyMovieDatabaseApplication
-        fun get(): MyMovieDatabaseApplication = INSTANCE
+        private lateinit var INSTANCE: App
+        fun get(): App = INSTANCE
     }
 
 }
