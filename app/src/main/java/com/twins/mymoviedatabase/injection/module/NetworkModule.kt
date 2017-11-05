@@ -11,7 +11,7 @@ import javax.inject.Singleton
 /**
  * Created by bukalapak on 10/26/17.
  */
-@Module(includes = arrayOf(ServiceModule::class))
+@Module
 object NetworkModule {
 
     @JvmStatic

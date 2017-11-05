@@ -3,8 +3,8 @@
 buildscript {
     ext.kotlin_version = '1.1.51'
     repositories {
-        google()
         jcenter()
+        google()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.0'
@@ -18,6 +18,7 @@ buildscript {
 
 ext {
     daggerVersion = '2.11'
+    androidSupportVersion = '27.0.0'
 }
 
 allprojects {

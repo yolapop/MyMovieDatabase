@@ -1,22 +1,16 @@
-package com.twins.mymoviedatabase.feature_auth.fragment
+package com.twins.mymoviedatabase.auth.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import com.twins.mymoviedatabase.BaseFragment
 import com.twins.mymoviedatabase.R
-import com.twins.mymoviedatabase.netapi.service.AuthenticationService
-import dagger.Lazy
+import com.twins.mymoviedatabase.util.toastShort
 import kotlinx.android.synthetic.main.fragment_auth.*
-import javax.inject.Inject
 
 /**
  * Created by bukalapak on 10/29/17.
  */
 class AuthFragment : BaseFragment() {
-
-    @Inject
-    lateinit var authService: Lazy<AuthenticationService>
 
     init {
         layoutRes = R.layout.fragment_auth
@@ -28,7 +22,9 @@ class AuthFragment : BaseFragment() {
     }
 
     private fun doAuth() {
-        Log.v("yolapop", "service " + authService.get())
+        context?.toastShort("api $api")
+        /*api.service(AuthenticationService::class.java)
+                .createRequestToken(RequestToken("ksjhdf")).result { requestToken ->  }*/
     }
 
 }

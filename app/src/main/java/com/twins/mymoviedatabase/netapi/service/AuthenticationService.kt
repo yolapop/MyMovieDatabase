@@ -1,7 +1,7 @@
 package com.twins.mymoviedatabase.netapi.service
 
 import com.twins.mymoviedatabase.netapi.response.RequestToken
-import io.reactivex.Observable
+import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
 
@@ -11,6 +11,6 @@ import retrofit2.http.POST
 interface AuthenticationService {
 
     @POST("/4/auth/request_token")
-    fun createRequestToken(@Body param: RequestToken): Observable<RequestToken>
+    fun createRequestToken(@Body param: RequestToken): Call<RequestToken>
 
 }

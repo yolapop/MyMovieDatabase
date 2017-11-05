@@ -1,7 +1,7 @@
 package com.twins.mymoviedatabase
 
 import android.os.Bundle
-import com.twins.mymoviedatabase.feature_auth.fragment.AuthFragment
+import com.twins.mymoviedatabase.auth.fragment.AuthFragment
 
 class HostActivity : BaseActivity() {
 

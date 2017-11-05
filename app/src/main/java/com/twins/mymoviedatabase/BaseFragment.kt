@@ -4,12 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.twins.mymoviedatabase.netapi.Api
 import dagger.android.support.DaggerFragment
+import javax.inject.Inject
 
 /**
  * Created by bukalapak on 10/29/17.
  */
 open class BaseFragment : DaggerFragment() {
+    @Inject
+    lateinit var api: Api
 
     open var layoutRes: Int? = null
     open var title: CharSequence? = null

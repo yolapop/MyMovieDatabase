@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 /**
  * Created by bukalapak on 10/29/17.
  */
-open class BaseResponse() {
+open class BaseResponse {
 
     var success: Boolean = false
 
