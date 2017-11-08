@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- START: FONT WEIGHTS -->
+    <style name="Thin" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">sans-serif-thin</item>
+    </style>
+
+    <style name="Light" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="Regular" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="Condensed" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+    <style name="Medium" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Bold" parent="Regular">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Black" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">sans-serif-black</item>
+    </style>
+
+    <style name="Thin.Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="Light.Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="Italic" parent="Regular">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="Condensed.Italic" parent="Condensed">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="Medium.Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="Bold.Italic">
+        <item name="android:textStyle">bold|italic</item>
+    </style>
+
+    <style name="Black.Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+    <!-- END: FONT WEIGHTS -->
+
+    <!-- START: FONT SIZE -->
+    <style name="Display4" parent="Light">
+        <item name="android:textSize">112sp</item>
+    </style>
+
+    <style name="Display4.Italic" parent="Light.Italic">
+        <item name="android:textSize">112sp</item>
+    </style>
+
+    <style name="Display3" parent="Regular">
+        <item name="android:textSize">56sp</item>
+    </style>
+
+    <style name="Display3.Italic" parent="Italic">
+        <item name="android:textSize">56sp</item>
+    </style>
+
+    <style name="Display2" parent="Regular">
+        <item name="android:textSize">45sp</item>
+    </style>
+
+    <style name="Display2.Italic" parent="Italic">
+        <item name="android:textSize">45sp</item>
+    </style>
+
+    <style name="Display1" parent="Regular">
+        <item name="android:textSize">34sp</item>
+    </style>
+
+    <style name="Display1.Italic" parent="Italic">
+        <item name="android:textSize">34sp</item>
+    </style>
+
+    <style name="Headline" parent="Regular">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Headline.Italic" parent="Italic">
+        <item name="textSize">24sp</item>
+    </style>
+
+    <style name="Title" parent="Medium">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Title.Italic" parent="Medium.Italic">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Subheading" parent="Regular">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Subheading.Italic" parent="Italic">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Body2" parent="Medium">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Body2.Italic" parent="Medium.Italic">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Body1" parent="Regular">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Body1.Italic" parent="Italic">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Caption" parent="Regular">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Caption.Italic" parent="Italic">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Button" parent="Medium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <!-- END: FONT SIZE -->
+
+</resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="android.support.constraint.ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivPoster"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@color/md_red_500"
+        tools:layout_height="160dp"
+        tools:layout_width="108dp" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/md_grey_800"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toRightOf="@+id/ivPoster"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="The Hunger Games" />
+
+    <TextView
+        android:id="@+id/tvGenre"
+        style="@style/Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="2dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:background="@drawable/rect_rad2_stroke_grey500"
+        android:textColor="@color/md_grey_500"
+        app:layout_constraintLeft_toRightOf="@+id/ivPoster"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        tools:text="Thriller"/>
+
+    <TextView
+        android:id="@+id/tvCertification"
+        style="@style/Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="2dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:background="@drawable/rect_rad2_stroke_grey500"
+        android:textColor="@color/md_grey_500"
+        app:layout_constraintLeft_toRightOf="@+id/tvGenre"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        tools:text="PG-13"/>
+
+    <TextView
+        android:id="@+id/tvSynopsis"
+        style="@style/Body1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="2dp"
+        android:ellipsize="end"
+        android:textColor="@color/md_grey_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toRightOf="@+id/ivPoster"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvGenre"
+        tools:text="Katniss Everdeen voluntarily takes her younger sister's place in the Hunger Games: a televised competition in which two teenagers from each of the twelve Districts of Panem are chosen at random to fight to the death." />
+
+</merge>

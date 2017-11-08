@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.twins.mymoviedatabase.netapi.Api
-import dagger.android.support.DaggerFragment
+import dagger.android.DaggerFragment
 import javax.inject.Inject
 
 /**

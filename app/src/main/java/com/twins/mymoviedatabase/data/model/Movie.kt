@@ -30,8 +30,6 @@ data class Movie(
         var productionCompanies: Array<Company>? = null,
         @SerializedName("production_countries")
         var productionCountries: Array<Country>? = null,
-        @SerializedName("release_date")
-        var releaseDate: Date? = null,
         var revenue: Long? = null,
         var runtime: Long? = null,
         @SerializedName("spoken_languages")
@@ -43,7 +41,11 @@ data class Movie(
         @SerializedName("vote_average")
         var voteAverage: Double? = null,
         @SerializedName("vote_count")
-        var voteCount: Long? = null
+        var voteCount: Long? = null,
+        @SerializedName("release_date")
+        var releaseDate: Date? = null,
+        @SerializedName("release_dates")
+        var releaseDates: ReleaseDates? = null
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -66,7 +68,6 @@ data class Movie(
         if (popularity != other.popularity) return false
         if (!Arrays.equals(productionCompanies, other.productionCompanies)) return false
         if (!Arrays.equals(productionCountries, other.productionCountries)) return false
-        if (releaseDate != other.releaseDate) return false
         if (revenue != other.revenue) return false
         if (runtime != other.runtime) return false
         if (!Arrays.equals(spokenLanguage, other.spokenLanguage)) return false
@@ -76,6 +77,8 @@ data class Movie(
         if (video != other.video) return false
         if (voteAverage != other.voteAverage) return false
         if (voteCount != other.voteCount) return false
+        if (releaseDate != other.releaseDate) return false
+        if (releaseDates != other.releaseDates) return false
 
         return true
     }
@@ -96,7 +99,6 @@ data class Movie(
         result = 31 * result + (popularity?.hashCode() ?: 0)
         result = 31 * result + (productionCompanies?.let { Arrays.hashCode(it) } ?: 0)
         result = 31 * result + (productionCountries?.let { Arrays.hashCode(it) } ?: 0)
-        result = 31 * result + (releaseDate?.hashCode() ?: 0)
         result = 31 * result + (revenue?.hashCode() ?: 0)
         result = 31 * result + (runtime?.hashCode() ?: 0)
         result = 31 * result + (spokenLanguage?.let { Arrays.hashCode(it) } ?: 0)
@@ -106,7 +108,8 @@ data class Movie(
         result = 31 * result + video.hashCode()
         result = 31 * result + (voteAverage?.hashCode() ?: 0)
         result = 31 * result + (voteCount?.hashCode() ?: 0)
+        result = 31 * result + (releaseDate?.hashCode() ?: 0)
+        result = 31 * result + (releaseDates?.hashCode() ?: 0)
         return result
     }
-
 }

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">My Movie Database</string>
+    <string name="app_name_short">MMDb</string>
     <string name="allow_account_access">Allow this app to access your TMDb data</string>
 </resources>
