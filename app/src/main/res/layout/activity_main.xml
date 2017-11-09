@@ -9,8 +9,8 @@
 
     <Toolbar
         android:id="@+id/toolbar"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
+        android:background="?android:attr/colorPrimary"
+        android:minHeight="?android:attr/actionBarSize"
         android:theme="@style/ToolbarTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

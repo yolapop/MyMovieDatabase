@@ -2,23 +2,23 @@
 <resources>
 
     <!-- START: FONT WEIGHTS -->
-    <style name="Thin" parent="TextAppearance.AppCompat">
+    <style name="Thin" parent="@android:style/TextAppearance">
         <item name="android:fontFamily">sans-serif-thin</item>
     </style>
 
-    <style name="Light" parent="TextAppearance.AppCompat">
+    <style name="Light" parent="@android:style/TextAppearance">
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
 
-    <style name="Regular" parent="TextAppearance.AppCompat">
+    <style name="Regular" parent="@android:style/TextAppearance">
         <item name="android:fontFamily">sans-serif</item>
     </style>
 
-    <style name="Condensed" parent="TextAppearance.AppCompat">
+    <style name="Condensed" parent="@android:style/TextAppearance">
         <item name="android:fontFamily">sans-serif-condensed</item>
     </style>
 
-    <style name="Medium" parent="TextAppearance.AppCompat">
+    <style name="Medium" parent="@android:style/TextAppearance">
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
@@ -26,7 +26,7 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="Black" parent="TextAppearance.AppCompat">
+    <style name="Black" parent="@android:style/TextAppearance">
         <item name="android:fontFamily">sans-serif-black</item>
     </style>
 
@@ -97,7 +97,7 @@
     </style>
 
     <style name="Headline.Italic" parent="Italic">
-        <item name="textSize">24sp</item>
+        <item name="android:textSize">24sp</item>
     </style>
 
     <style name="Title" parent="Medium">

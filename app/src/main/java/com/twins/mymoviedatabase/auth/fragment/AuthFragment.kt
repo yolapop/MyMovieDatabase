@@ -22,7 +22,7 @@ class AuthFragment : BaseFragment() {
     }
 
     private fun doAuth() {
-        context?.toastShort("api $api")
+        activity?.toastShort("api $api")
         /*api.service(AuthenticationService::class.java)
                 .createRequestToken(RequestToken("ksjhdf")).result { requestToken ->  }*/
     }
