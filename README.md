@@ -7,8 +7,7 @@ Twin learning: An Android app that uses latest the programming patterns
 
 <br />
 
-##Libraries / Tools used:
-
+# Libraries / Tools used:
 * Realm
 * Dagger 2
 * RxJava 2
@@ -17,7 +16,7 @@ Twin learning: An Android app that uses latest the programming patterns
 * [Remixer](https://github.com/material-foundation/material-remixer-android)
 * [Atomic design](http://bradfrost.com/blog/post/atomic-web-design/)
 
-##To-dos:
+# To-dos:
 * Solve re-orientation problem — where data flows after `Activity`/`Fragment` is destroyed — **elegantly**
 * Research about architechtures and pick one
 * Modularize code and put them as libraries
