@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.twins.mymoviedatabase.netapi.Api
 import dagger.android.DaggerFragment
+import io.realm.Realm
 import javax.inject.Inject
 
 /**
@@ -14,6 +15,8 @@ import javax.inject.Inject
 open class BaseFragment : DaggerFragment() {
     @Inject
     lateinit var api: Api
+    @Inject
+    lateinit var realm: Realm
 
     open var layoutRes: Int? = null
     open var title: CharSequence? = null
@@ -28,6 +31,11 @@ open class BaseFragment : DaggerFragment() {
         return layoutRes?.let {
             inflater.inflate(it, container, false)
         } ?: super.onCreateView(inflater, container, savedInstanceState)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        realm.close()
     }
 
 }

@@ -1,6 +1,5 @@
 package com.twins.mymoviedatabase.injection.module
 
-import com.twins.mymoviedatabase.injection.scope.PerActivity
 import dagger.Module
 import dagger.Provides
 import io.realm.Realm
@@ -13,7 +12,7 @@ import io.realm.RealmConfiguration
 object DatabaseModule {
 
     @JvmStatic
-    @Provides @PerActivity
+    @Provides
     fun provideRealm(): Realm {
         val config = RealmConfiguration.Builder()
                 .name("myrealm.realm")

@@ -1,13 +1,17 @@
 package com.twins.mymoviedatabase.data.model
 
 import com.google.gson.annotations.SerializedName
+import io.realm.RealmList
+import io.realm.RealmObject
+import io.realm.annotations.Ignore
+import io.realm.annotations.PrimaryKey
 import java.util.*
 
 /**
  * Created by bukalapak on 11/5/17.
  */
-data class Movie(
-        var id: Long,
+open class Movie(
+        @PrimaryKey var id: Long = 0,
         @SerializedName("imdb_id")
         var imdbId: String? = null,
         var adult: Boolean = false,
@@ -18,7 +22,7 @@ data class Movie(
         @SerializedName("belongs_to_collection")
         var belongsToCollection: Collection? = null,
         var budget: Long? = null,
-        var genres: Array<Genre>? = null,
+        var genres: RealmList<Genre>? = null,
         var homepage: String? = null,
         @SerializedName("original_language")
         var originalLanguage: String? = null,
@@ -27,13 +31,13 @@ data class Movie(
         var overview: String? = null,
         var popularity: Double? = null,
         @SerializedName("production_companies")
-        var productionCompanies: Array<Company>? = null,
+        var productionCompanies: RealmList<Company>? = null,
         @SerializedName("production_countries")
-        var productionCountries: Array<Country>? = null,
+        var productionCountries: RealmList<Country>? = null,
         var revenue: Long? = null,
         var runtime: Long? = null,
         @SerializedName("spoken_languages")
-        var spokenLanguage: Array<Language>? = null,
+        var spokenLanguage: RealmList<Language>? = null,
         var status: String? = null,
         var tagline: String? = null,
         var title: String? = null,
@@ -44,72 +48,12 @@ data class Movie(
         var voteCount: Long? = null,
         @SerializedName("release_date")
         var releaseDate: Date? = null,
+        /**
+         * This is only for JSON structure, for real stuff, you should use [releaseDates]
+         */
+        @Ignore
         @SerializedName("release_dates")
-        var releaseDates: ReleaseDates? = null
-) {
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (javaClass != other?.javaClass) return false
-
-        other as Movie
-
-        if (id != other.id) return false
-        if (imdbId != other.imdbId) return false
-        if (adult != other.adult) return false
-        if (backdropPath != other.backdropPath) return false
-        if (posterPath != other.posterPath) return false
-        if (belongsToCollection != other.belongsToCollection) return false
-        if (budget != other.budget) return false
-        if (!Arrays.equals(genres, other.genres)) return false
-        if (homepage != other.homepage) return false
-        if (originalLanguage != other.originalLanguage) return false
-        if (originalTitle != other.originalTitle) return false
-        if (overview != other.overview) return false
-        if (popularity != other.popularity) return false
-        if (!Arrays.equals(productionCompanies, other.productionCompanies)) return false
-        if (!Arrays.equals(productionCountries, other.productionCountries)) return false
-        if (revenue != other.revenue) return false
-        if (runtime != other.runtime) return false
-        if (!Arrays.equals(spokenLanguage, other.spokenLanguage)) return false
-        if (status != other.status) return false
-        if (tagline != other.tagline) return false
-        if (title != other.title) return false
-        if (video != other.video) return false
-        if (voteAverage != other.voteAverage) return false
-        if (voteCount != other.voteCount) return false
-        if (releaseDate != other.releaseDate) return false
-        if (releaseDates != other.releaseDates) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = id.hashCode()
-        result = 31 * result + (imdbId?.hashCode() ?: 0)
-        result = 31 * result + adult.hashCode()
-        result = 31 * result + (backdropPath?.hashCode() ?: 0)
-        result = 31 * result + (posterPath?.hashCode() ?: 0)
-        result = 31 * result + (belongsToCollection?.hashCode() ?: 0)
-        result = 31 * result + (budget?.hashCode() ?: 0)
-        result = 31 * result + (genres?.let { Arrays.hashCode(it) } ?: 0)
-        result = 31 * result + (homepage?.hashCode() ?: 0)
-        result = 31 * result + (originalLanguage?.hashCode() ?: 0)
-        result = 31 * result + (originalTitle?.hashCode() ?: 0)
-        result = 31 * result + (overview?.hashCode() ?: 0)
-        result = 31 * result + (popularity?.hashCode() ?: 0)
-        result = 31 * result + (productionCompanies?.let { Arrays.hashCode(it) } ?: 0)
-        result = 31 * result + (productionCountries?.let { Arrays.hashCode(it) } ?: 0)
-        result = 31 * result + (revenue?.hashCode() ?: 0)
-        result = 31 * result + (runtime?.hashCode() ?: 0)
-        result = 31 * result + (spokenLanguage?.let { Arrays.hashCode(it) } ?: 0)
-        result = 31 * result + (status?.hashCode() ?: 0)
-        result = 31 * result + (tagline?.hashCode() ?: 0)
-        result = 31 * result + (title?.hashCode() ?: 0)
-        result = 31 * result + video.hashCode()
-        result = 31 * result + (voteAverage?.hashCode() ?: 0)
-        result = 31 * result + (voteCount?.hashCode() ?: 0)
-        result = 31 * result + (releaseDate?.hashCode() ?: 0)
-        result = 31 * result + (releaseDates?.hashCode() ?: 0)
-        return result
-    }
-}
+        var gsonReleaseDates: ReleaseDates? = null,
+        @Transient
+        var releaseDates: RealmList<ReleaseDatesInCountry>? = null
+) : RealmObject()

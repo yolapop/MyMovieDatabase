@@ -1,6 +1,12 @@
 package com.twins.mymoviedatabase.data.model
 
+import io.realm.RealmObject
+import io.realm.annotations.PrimaryKey
+
 /**
  * Created by bukalapak on 11/5/17.
  */
-data class Genre(var id: Long, var name: String? = null)
+open class Genre(
+        @PrimaryKey var id: Long = 0,
+        var name: String? = null
+) : RealmObject()

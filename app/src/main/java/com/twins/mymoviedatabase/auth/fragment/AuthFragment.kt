@@ -4,7 +4,11 @@ import android.os.Bundle
 import android.view.View
 import com.twins.mymoviedatabase.BaseFragment
 import com.twins.mymoviedatabase.R
+import com.twins.mymoviedatabase.data.dao.MovieDaoImpl
+import com.twins.mymoviedatabase.data.model.Collection
+import com.twins.mymoviedatabase.data.model.Movie
 import com.twins.mymoviedatabase.util.toastShort
+import io.realm.RealmList
 import kotlinx.android.synthetic.main.fragment_auth.*
 
 /**
@@ -25,6 +29,20 @@ class AuthFragment : BaseFragment() {
         activity?.toastShort("api $api")
         /*api.service(AuthenticationService::class.java)
                 .createRequestToken(RequestToken("ksjhdf")).result { requestToken ->  }*/
+
+        val collection = Collection().apply {
+            id = 1
+            name = "Collection 1"
+        }
+        val movie = Movie().apply {
+            id = 1
+            title = "A Good Movie"
+            belongsToCollection = collection
+        }
+        collection.movies = RealmList(movie)
+
+        val dao = MovieDaoImpl(realm)
+        dao.insert(movie)
     }
 
 }

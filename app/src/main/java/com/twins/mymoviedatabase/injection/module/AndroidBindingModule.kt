@@ -13,10 +13,10 @@ import dagger.android.ContributesAndroidInjector
 abstract class AndroidBindingModule {
 
     @PerActivity
-    @ContributesAndroidInjector(modules = arrayOf(DatabaseModule::class))
+    @ContributesAndroidInjector
     abstract fun hostActivity(): HostActivity
 
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = arrayOf(DatabaseModule::class))
     abstract fun authFragment(): AuthFragment
 
 }
