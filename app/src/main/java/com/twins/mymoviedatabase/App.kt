@@ -1,7 +1,6 @@
 package com.twins.mymoviedatabase
 
-import com.twins.mymoviedatabase.injection.component.DaggerApplicationComponent
-import com.twins.mymoviedatabase.injection.module.ApplicationModule
+//import com.twins.mymoviedatabase.core.injection.module.ApplicationModule
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 import io.realm.Realm
@@ -17,11 +16,12 @@ class App : DaggerApplication() {
         Realm.init(this)
     }
 
-    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        return DaggerApplicationComponent
+    override fun applicationInjector(): AndroidInjector<out DaggerApplication>? {
+        /*return DaggerApplicationComponent
                 .builder()
                 .applicationModule(ApplicationModule(this))
-                .create(this)
+                .create(this)*/
+        return null
     }
 
     companion object {

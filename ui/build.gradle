@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    api "com.android.support:support-core-ui:$androidSupportVersion"
+    api "com.android.support:palette-v7:$androidSupportVersion"
+    api "com.android.support:recyclerview-v7:$androidSupportVersion"
+    api 'com.android.support.constraint:constraint-layout:1.0.2'
+    api "com.android.support:customtabs:$androidSupportVersion"
+
+    // fast adapter
+    implementation 'com.mikepenz:fastadapter:3.0.0@aar'
+    implementation 'com.mikepenz:fastadapter-commons:3.0.0@aar'
+    implementation 'com.mikepenz:fastadapter-extensions-expandable:3.0.0@aar'
+    implementation 'com.mikepenz:fastadapter-extensions:3.0.0@aar'
+
+    api project(':core')
+}
+repositories {
+    mavenCentral()
+}

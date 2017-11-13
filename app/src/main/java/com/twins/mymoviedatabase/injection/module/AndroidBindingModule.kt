@@ -2,7 +2,8 @@ package com.twins.mymoviedatabase.injection.module
 
 import com.twins.mymoviedatabase.HostActivity
 import com.twins.mymoviedatabase.auth.fragment.AuthFragment
-import com.twins.mymoviedatabase.injection.scope.PerActivity
+import com.twins.mymoviedatabase.core.injection.module.DatabaseModule
+import com.twins.mymoviedatabase.core.injection.scope.PerActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

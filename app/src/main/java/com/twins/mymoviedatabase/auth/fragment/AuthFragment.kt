@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.view.View
 import com.twins.mymoviedatabase.BaseFragment
 import com.twins.mymoviedatabase.R
-import com.twins.mymoviedatabase.data.dao.MovieDaoImpl
-import com.twins.mymoviedatabase.data.model.Collection
-import com.twins.mymoviedatabase.data.model.Movie
-import com.twins.mymoviedatabase.util.toastShort
+import com.twins.mymoviedatabase.core.data.dao.RealmMovieRepository
+import com.twins.mymoviedatabase.core.data.model.Collection
+import com.twins.mymoviedatabase.core.data.model.Movie
+import com.twins.mymoviedatabase.core.netapi.request.RequestToken
+import com.twins.mymoviedatabase.core.netapi.result
+import com.twins.mymoviedatabase.core.netapi.service.AuthenticationService
+import com.twins.mymoviedatabase.core.util.toastShort
 import io.realm.RealmList
 import kotlinx.android.synthetic.main.fragment_auth.*
 
@@ -27,8 +30,10 @@ class AuthFragment : BaseFragment() {
 
     private fun doAuth() {
         activity?.toastShort("api $api")
-        /*api.service(AuthenticationService::class.java)
-                .createRequestToken(RequestToken("ksjhdf")).result { requestToken ->  }*/
+        api.service(AuthenticationService::class.java)
+                .createRequestToken(RequestToken("ksjhdf")).result { requestToken ->
+
+        }
 
         val collection = Collection().apply {
             id = 1
@@ -41,8 +46,8 @@ class AuthFragment : BaseFragment() {
         }
         collection.movies = RealmList(movie)
 
-        val dao = MovieDaoImpl(realm)
-        dao.insert(movie)
+        val dao = RealmMovieRepository(realm)
+        dao.add(movie)
     }
 
 }

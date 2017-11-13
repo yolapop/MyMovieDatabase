@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.twins.mymoviedatabase.netapi.Api
+import com.twins.mymoviedatabase.core.netapi.Api
 import dagger.android.DaggerFragment
 import io.realm.Realm
 import javax.inject.Inject

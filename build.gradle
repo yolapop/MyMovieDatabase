@@ -8,7 +8,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.0'
-        classpath "io.realm:realm-gradle-plugin:3.7.2"
+        classpath "io.realm:realm-gradle-plugin:4.1.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -30,4 +30,15 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+configurations.all {
+    resolutionStrategy.force "com.android.support:appcompat-v7:$androidSupportVersion"
+    resolutionStrategy.force "com.android.support:cardview-v7:$androidSupportVersion"
+    resolutionStrategy.force "com.android.support:recyclerview-v7:$androidSupportVersion"
+    resolutionStrategy.force "com.android.support:design:$androidSupportVersion"
+    resolutionStrategy.force "com.android.support:percent:$androidSupportVersion"
+    resolutionStrategy.force "com.android.support:preference-v14:$androidSupportVersion"
+    resolutionStrategy.force "com.android.support:customtabs:$androidSupportVersion"
+    resolutionStrategy.force "com.android.support:support-annotations:$androidSupportVersion"
 }
