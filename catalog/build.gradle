@@ -1,12 +1,12 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 27
 
     defaultConfig {
+        applicationId "com.twins.mymoviedatabase.catalogtest"
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
@@ -26,18 +26,13 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-
-    api "com.android.support:support-core-ui:$androidSupportVersion"
-    api "com.android.support:palette-v7:$androidSupportVersion"
-    api "com.android.support:recyclerview-v7:$androidSupportVersion"
-    api 'com.android.support.constraint:constraint-layout:1.0.2'
-    api "com.android.support:customtabs:$androidSupportVersion"
+    androidTestImplementation 'com.linkedin.testbutler:test-butler-library:1.3.1'
+    implementation project(':ui')
 
     // dagger
     implementation "com.google.dagger:dagger:$daggerVersion"
@@ -50,14 +45,9 @@ dependencies {
     }
     kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
 
-    // fast adapter
-    api 'com.mikepenz:fastadapter:3.0.0@aar'
-    api 'com.mikepenz:fastadapter-commons:3.0.0@aar'
-    api 'com.mikepenz:fastadapter-extensions-expandable:3.0.0@aar'
-    api 'com.mikepenz:fastadapter-extensions:3.0.0@aar'
-
-    api project(':core')
-}
-repositories {
-    mavenCentral()
+    // livedata & viewmodel
+    kapt "android.arch.lifecycle:compiler:1.0.0"
+    implementation "android.arch.lifecycle:runtime:1.0.3"
+    implementation "android.arch.lifecycle:extensions:1.0.0"
+    implementation "android.arch.lifecycle:reactivestreams:1.0.0"
 }

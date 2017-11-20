@@ -1,27 +1,28 @@
-package com.twins.mymoviedatabase.injection.component
+package com.twins.mymoviedatabase.catalog.injection.component
 
-import com.twins.mymoviedatabase.App
-import com.twins.mymoviedatabase.core.injection.module.NetworkModule
-import com.twins.mymoviedatabase.injection.module.AndroidBindingModule
-import com.twins.mymoviedatabase.injection.module.ApplicationModule
+import com.twins.mymoviedatabase.catalog.App
+import com.twins.mymoviedatabase.catalog.injection.module.ApplicationModule
+import com.twins.mymoviedatabase.catalog.injection.module.ImageModule
+import com.twins.mymoviedatabase.ui.glide.ImageLoader
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
-
 /**
- * Created by Ridwan Arvihafiz on 9/29/17.
+ * Created by bukalapak on 11/20/17.
  */
 @Singleton
 @Component(modules = arrayOf(ApplicationModule::class,
-        AndroidBindingModule::class,
         AndroidSupportInjectionModule::class,
-        NetworkModule::class))
+        ImageModule::class))
 interface ApplicationComponent : AndroidInjector<App> {
+
+    fun imageLoader(): ImageLoader
 
     @Component.Builder
     abstract class Builder : AndroidInjector.Builder<App>() {
         abstract fun applicationModule(module: ApplicationModule): Builder
     }
+
 }

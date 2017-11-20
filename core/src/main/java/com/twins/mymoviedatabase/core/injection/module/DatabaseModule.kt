@@ -15,7 +15,7 @@ object DatabaseModule {
     @Provides
     fun provideRealm(): Realm {
         val config = RealmConfiguration.Builder()
-                .name("myrealm.realm")
+                .name("db.realm")
                 .schemaVersion(1)
                 .build()
         return Realm.getInstance(config)

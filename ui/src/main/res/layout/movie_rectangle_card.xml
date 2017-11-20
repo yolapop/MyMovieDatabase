@@ -7,14 +7,21 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/ivPoster"
+        android:id="@+id/ivBig"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,27:40"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@color/md_red_500" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:background="@color/md_red_500"
-        tools:layout_height="160dp"
-        tools:layout_width="108dp" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.30" />
 
     <TextView
         android:id="@+id/tvTitle"
@@ -24,13 +31,13 @@
         android:layout_marginLeft="8dp"
         android:textColor="@color/md_grey_800"
         app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintLeft_toRightOf="@+id/ivPoster"
+        app:layout_constraintLeft_toRightOf="@+id/ivBig"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="The Hunger Games" />
 
     <TextView
-        android:id="@+id/tvGenre"
+        android:id="@+id/tvLabel1"
         style="@style/Caption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,12 +47,12 @@
         tools:visibility="visible"
         android:background="@drawable/rect_rad2_stroke_grey500"
         android:textColor="@color/md_grey_500"
-        app:layout_constraintLeft_toRightOf="@+id/ivPoster"
+        app:layout_constraintLeft_toRightOf="@+id/ivBig"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle"
         tools:text="Thriller"/>
 
     <TextView
-        android:id="@+id/tvCertification"
+        android:id="@+id/tvLabel2"
         style="@style/Caption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,12 +62,12 @@
         tools:visibility="visible"
         android:background="@drawable/rect_rad2_stroke_grey500"
         android:textColor="@color/md_grey_500"
-        app:layout_constraintLeft_toRightOf="@+id/tvGenre"
+        app:layout_constraintLeft_toRightOf="@+id/tvLabel1"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle"
         tools:text="PG-13"/>
 
     <TextView
-        android:id="@+id/tvSynopsis"
+        android:id="@+id/tvDescription"
         style="@style/Body1"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -70,9 +77,9 @@
         android:textColor="@color/md_grey_700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintLeft_toRightOf="@+id/ivPoster"
+        app:layout_constraintLeft_toRightOf="@+id/ivBig"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvGenre"
+        app:layout_constraintTop_toBottomOf="@id/tvLabel1"
         tools:text="Katniss Everdeen voluntarily takes her younger sister's place in the Hunger Games: a televised competition in which two teenagers from each of the twelve Districts of Panem are chosen at random to fight to the death." />
 
 </merge>

@@ -31,14 +31,3 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-
-configurations.all {
-    resolutionStrategy.force "com.android.support:appcompat-v7:$androidSupportVersion"
-    resolutionStrategy.force "com.android.support:cardview-v7:$androidSupportVersion"
-    resolutionStrategy.force "com.android.support:recyclerview-v7:$androidSupportVersion"
-    resolutionStrategy.force "com.android.support:design:$androidSupportVersion"
-    resolutionStrategy.force "com.android.support:percent:$androidSupportVersion"
-    resolutionStrategy.force "com.android.support:preference-v14:$androidSupportVersion"
-    resolutionStrategy.force "com.android.support:customtabs:$androidSupportVersion"
-    resolutionStrategy.force "com.android.support:support-annotations:$androidSupportVersion"
-}
