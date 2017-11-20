@@ -4,7 +4,7 @@ import com.twins.mymoviedatabase.catalog.injection.component.ApplicationComponen
 import com.twins.mymoviedatabase.catalog.injection.component.DaggerApplicationComponent
 import com.twins.mymoviedatabase.catalog.injection.module.ApplicationModule
 import dagger.android.AndroidInjector
-import dagger.android.support.DaggerApplication
+import dagger.android.DaggerApplication
 
 /**
  * Created by bukalapak on 11/20/17.

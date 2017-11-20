@@ -5,8 +5,8 @@ import com.twins.mymoviedatabase.core.injection.module.NetworkModule
 import com.twins.mymoviedatabase.injection.module.AndroidBindingModule
 import com.twins.mymoviedatabase.injection.module.ApplicationModule
 import dagger.Component
+import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
-import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 
@@ -16,7 +16,7 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = arrayOf(ApplicationModule::class,
         AndroidBindingModule::class,
-        AndroidSupportInjectionModule::class,
+        AndroidInjectionModule::class,
         NetworkModule::class))
 interface ApplicationComponent : AndroidInjector<App> {
 
