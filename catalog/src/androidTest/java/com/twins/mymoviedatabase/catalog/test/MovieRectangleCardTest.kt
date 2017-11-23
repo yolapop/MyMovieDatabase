@@ -10,7 +10,6 @@ import com.twins.mymoviedatabase.catalog.MovieRectangleCardActivity
 import com.twins.mymoviedatabase.catalog.R
 import com.twins.mymoviedatabase.catalog.matcher.MovieRectangleCardMatcher
 import com.twins.mymoviedatabase.catalog.rotateScreen
-import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -26,10 +25,8 @@ class MovieRectangleCardTest {
     @Rule @JvmField
     val activityRule = ActivityTestRule(MovieRectangleCardActivity::class.java)
 
-    @Before
-
     @Test
-    fun movieRectangleCard() {
+    fun testMovieRectangleCard() {
         onView(withId(R.id.movieRectangleCard))
                 .check(ViewAssertions.matches(MovieRectangleCardMatcher.withOriginalContents()))
         activityRule.rotateScreen()

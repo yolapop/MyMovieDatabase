@@ -5,12 +5,10 @@ import android.os.Parcelable
 import android.util.AttributeSet
 import com.twins.mymoviedatabase.core.util.unwrap
 import com.twins.mymoviedatabase.ui.R
-import com.twins.mymoviedatabase.ui.glide.ImageLoader
 import com.twins.mymoviedatabase.ui.util.ViewStateDelegate
 import com.twins.mymoviedatabase.ui.util.contentRes
 import com.twins.mymoviedatabase.ui.util.setImageUrl
 import kotlinx.android.synthetic.main.movie_rectangle_card.view.*
-import javax.inject.Inject
 
 /**
  * Created by bukalapak on 11/8/17.
@@ -24,13 +22,6 @@ class MovieRectangleCard : KeepConstraintLayout {
         contentRes(R.layout.movie_rectangle_card)
         initAttr(attrs)
     }
-
-    /**
-     * Should we inject our custom views? Personally I think it's good when a View doesn't need to
-     * be injected but I need to mock Glide/ImageLoader
-     */
-    @Inject
-    lateinit var imageLoader: ImageLoader
 
     var imageDrawable: Int? by ViewStateDelegate<Int?>(null) {
         unwrap(it) {

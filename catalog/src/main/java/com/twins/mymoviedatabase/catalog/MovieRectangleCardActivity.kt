@@ -1,12 +1,13 @@
 package com.twins.mymoviedatabase.catalog
 
+import android.app.Activity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_movie_rectangle_card.*
 
 /**
  * Created by bukalapak on 11/16/17.
  */
-class MovieRectangleCardActivity : BaseActivity() {
+class MovieRectangleCardActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

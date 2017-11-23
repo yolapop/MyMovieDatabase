@@ -1,4 +1,4 @@
-package com.twins.mymoviedatabase.ui.glide
+package com.twins.mymoviedatabase.ui.util
 
 import android.annotation.SuppressLint
 import android.widget.ImageView
@@ -9,13 +9,13 @@ import com.bumptech.glide.request.RequestOptions
 /**
  * Created by bukalapak on 11/20/17.
  */
-object ImageLoaderImpl : ImageLoader {
+object ImageLoader {
 
     @SuppressLint("CheckResult")
-    override fun load(view: ImageView,
-                      url: GlideUrl?,
-                      placeholderColor: Int?,
-                      placeholderDrawable: Int?) {
+    fun load(view: ImageView,
+             url: GlideUrl?,
+             placeholderColor: Int?,
+             placeholderDrawable: Int?) {
         val builder = Glide.with(view).load(url)
 
         builder.apply(RequestOptions().apply {

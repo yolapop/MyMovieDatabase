@@ -2,8 +2,6 @@ package com.twins.mymoviedatabase.catalog.injection.component
 
 import com.twins.mymoviedatabase.catalog.App
 import com.twins.mymoviedatabase.catalog.injection.module.ApplicationModule
-import com.twins.mymoviedatabase.catalog.injection.module.ImageModule
-import com.twins.mymoviedatabase.ui.glide.ImageLoader
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
@@ -14,11 +12,8 @@ import javax.inject.Singleton
  */
 @Singleton
 @Component(modules = arrayOf(ApplicationModule::class,
-        AndroidInjectionModule::class,
-        ImageModule::class))
+        AndroidInjectionModule::class))
 interface ApplicationComponent : AndroidInjector<App> {
-
-    fun imageLoader(): ImageLoader
 
     @Component.Builder
     abstract class Builder : AndroidInjector.Builder<App>() {

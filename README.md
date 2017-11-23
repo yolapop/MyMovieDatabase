@@ -1,6 +1,8 @@
 # MyMovieDatabase
 Twin learning: An Android app that uses latest the programming patterns
 
+**PS: contributions are welcome, let's learn together** :muscle:
+
 <br />
 
 <img src="https://raw.githubusercontent.com/thepracticaldev/orly-full-res/master/hypedrivendevelopment.png" width=500 />

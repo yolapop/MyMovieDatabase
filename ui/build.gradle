@@ -5,6 +5,7 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 27
+    publishNonDefault true
 
     defaultConfig {
         minSdkVersion 21
@@ -16,10 +17,25 @@ android {
 
     }
 
+    sourceSets {
+        debug {
+            java.srcDirs = ['src/release/java']
+        }
+    }
+
     buildTypes {
+        debug {
+            debuggable = true
+            minifyEnabled false
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        mock {
+            debuggable = true
+            minifyEnabled false
+            matchingFallbacks = ['debug', 'release']
         }
     }
 
