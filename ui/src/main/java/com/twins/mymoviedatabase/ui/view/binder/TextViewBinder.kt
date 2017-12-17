@@ -1,0 +1,55 @@
+package com.twins.mymoviedatabase.ui.view.binder
+
+import android.graphics.drawable.Drawable
+import android.widget.TextView
+import com.twins.mymoviedatabase.core.util.drawable
+import com.twins.mymoviedatabase.core.util.parseHtml
+import com.twins.mymoviedatabase.ui.util.*
+import com.twins.mymoviedatabase.ui.view.state.TextViewState
+import com.twins.mymoviedatabase.ui.view.state.ViewBaseState
+
+/**
+ * Bind a [android.widget.TextView] with [com.twins.mymoviedatabase.ui.view.state.TextViewState]
+ */
+object TextViewBinder : ViewBinder<TextView, TextViewState> {
+
+    private fun bindIcons(view: TextView, state: TextViewState) = with(view) {
+        var iconLeft: Drawable? = null
+        var iconTop: Drawable? = null
+        var iconRight: Drawable? = null
+        var iconBottom: Drawable? = null
+
+        state.iconResources?.let {
+            iconLeft = context.drawable(it.getOrNull(0))
+            iconTop = context.drawable(it.getOrNull(1))
+            iconRight = context.drawable(it.getOrNull(2))
+            iconBottom = context.drawable(it.getOrNull(3))
+        } ?: state.iconDrawables?.let {
+            iconLeft = it.getOrNull(0)
+            iconTop = it.getOrNull(1)
+            iconRight = it.getOrNull(2)
+            iconBottom = it.getOrNull(3)
+        }
+
+        iconLeft = context.drawable(iconLeft, state.iconTints?.getOrNull(0))
+        iconTop = context.drawable(iconTop, state.iconTints?.getOrNull(1))
+        iconRight = context.drawable(iconRight, state.iconTints?.getOrNull(2))
+        iconBottom = context.drawable(iconBottom, state.iconTints?.getOrNull(3))
+
+        setCompoundDrawablesWithIntrinsicBounds(iconLeft, iconTop, iconRight, iconBottom)
+    }
+
+    override fun bind(view: TextView, state: TextViewState) = with(view) {
+        setMTextAppearance(state.style)
+        setBackground(state.background)
+        setPadding(state.padding)
+        isEnabled = state.enabled
+        val _text = state.text
+        text = (_text as? String)?.parseHtml() ?: _text
+        bindIcons(this, state)
+        setListPreferredItemHeight(state.minHeight == ViewBaseState.MIN_HEIGHT_LIST, state.minHeight)
+        setMargins(state.margin)
+        requestLayout()
+    }
+
+}

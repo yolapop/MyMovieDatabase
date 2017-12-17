@@ -1,9 +1,14 @@
 package com.twins.mymoviedatabase.core.util
 
+import android.annotation.SuppressLint
 import android.content.Context
-import android.support.annotation.ColorInt
-import android.support.annotation.ColorRes
+import android.content.res.ColorStateList
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
+import android.support.annotation.*
 import android.support.v4.content.ContextCompat
+import android.support.v4.graphics.drawable.DrawableWrapper
 import android.widget.Toast
 
 /**
@@ -21,7 +26,51 @@ fun Context.toastLong(msg: CharSequence?) {
     }
 }
 
+fun Context.drawable(@DrawableRes res: Int?, @ColorRes tint: Int? = null): Drawable? {
+    return if (res == null) null else drawable(getDrawable(res), tint)
+}
+
+fun Context.drawable(d: Drawable?, @ColorRes tint: Int? = null): Drawable? {
+    return d?.mutate().apply {
+        tint?.let {
+            this?.setTint(ContextCompat.getColor(this@drawable, it))
+        }
+    }
+}
+
+fun Context.resizeDrawable(@DrawableRes d: Int?, @Px width: Int, @Px height: Int): Drawable? {
+    return resizeDrawable(drawable(d), width, height)
+}
+
+@SuppressLint("RestrictedApi")
+fun Context.resizeDrawable(orig: Drawable?, @Px width: Int, @Px height: Int): Drawable? {
+    var _d = orig
+    when(orig) {
+        is DrawableWrapper -> _d = orig.wrappedDrawable
+    }
+    return (_d as? BitmapDrawable)?.bitmap?.let {
+        val bitmapResized = Bitmap.createScaledBitmap(it, width, height, true)
+        BitmapDrawable(this@resizeDrawable.resources, bitmapResized)
+    } ?: orig
+}
+
 @ColorInt
 fun Context.color(@ColorRes res: Int): Int {
     return ContextCompat.getColor(this, res)
+}
+
+fun Context.colorStateList(@ColorRes res: Int): ColorStateList {
+    return ContextCompat.getColorStateList(this, res)!!
+}
+
+fun Context.dimension(@DimenRes res: Int): Float {
+    return this.resources.getDimension(res)
+}
+
+fun Context.dimensionPixelOffset(@DimenRes res: Int): Int {
+    return this.resources.getDimensionPixelOffset(res)
+}
+
+fun Context.dimensionPixelSize(@DimenRes res: Int): Int {
+    return resources.getDimensionPixelSize(res)
 }

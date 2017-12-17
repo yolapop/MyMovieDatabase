@@ -32,13 +32,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-        mock {
-            debuggable = true
-            minifyEnabled false
-            matchingFallbacks = ['debug', 'release']
-        }
     }
 
+}
+
+androidExtensions {
+    experimental = true
 }
 
 dependencies {
@@ -54,17 +53,7 @@ dependencies {
     api "com.android.support:recyclerview-v7:$androidSupportVersion"
     api 'com.android.support.constraint:constraint-layout:1.0.2'
     api "com.android.support:customtabs:$androidSupportVersion"
-
-    // dagger
-    implementation "com.google.dagger:dagger:$daggerVersion"
-    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
-
-    // dagger-android
-    implementation "com.google.dagger:dagger-android:$daggerVersion"
-    implementation("com.google.dagger:dagger-android-support:$daggerVersion") {
-        exclude group: 'com.android.support'
-    }
-    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+    api "com.android.support:design:$androidSupportVersion"
 
     // fast adapter
     api 'com.mikepenz:fastadapter:3.0.0@aar'

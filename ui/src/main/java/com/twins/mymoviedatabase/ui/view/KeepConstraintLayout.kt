@@ -6,9 +6,9 @@ import android.os.Parcelable
 import android.support.constraint.ConstraintLayout
 import android.util.AttributeSet
 import android.util.SparseArray
+import com.twins.mymoviedatabase.core.util.restoreKeepChildrenStates
+import com.twins.mymoviedatabase.core.util.saveKeepChildrenStates
 import com.twins.mymoviedatabase.ui.util.ViewState
-import com.twins.mymoviedatabase.ui.util.restoreKeepChildrenStates
-import com.twins.mymoviedatabase.ui.util.saveKeepChildrenStates
 
 /**
  * Created by bukalapak on 11/16/17.

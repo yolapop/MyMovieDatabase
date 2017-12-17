@@ -3,10 +3,10 @@ package com.twins.mymoviedatabase.ui.view
 import android.content.Context
 import android.os.Parcelable
 import android.util.AttributeSet
+import com.twins.mymoviedatabase.core.util.inflate
 import com.twins.mymoviedatabase.core.util.unwrap
 import com.twins.mymoviedatabase.ui.R
 import com.twins.mymoviedatabase.ui.util.ViewStateDelegate
-import com.twins.mymoviedatabase.ui.util.contentRes
 import com.twins.mymoviedatabase.ui.util.setImageUrl
 import kotlinx.android.synthetic.main.movie_rectangle_card.view.*
 
@@ -19,7 +19,7 @@ class MovieRectangleCard : KeepConstraintLayout {
     @JvmOverloads
     constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) :
             super(context, attrs, defStyleAttr) {
-        contentRes(R.layout.movie_rectangle_card)
+        inflate(R.layout.movie_rectangle_card)
         initAttr(attrs)
     }
 
