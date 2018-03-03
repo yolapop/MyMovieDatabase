@@ -1,4 +1,4 @@
-package com.twins.mymoviedatabase.injection.module
+package com.twins.mymoviedatabase.di.module
 
 import android.content.Context
 import android.content.SharedPreferences

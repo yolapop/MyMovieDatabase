@@ -1,7 +1,7 @@
 package com.twins.mymoviedatabase
 
 import android.os.Bundle
-import com.twins.mymoviedatabase.auth.fragment.AuthFragment
+import com.twins.mymoviedatabase.feature.movie.MovieDetailFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class HostActivity : BaseActivity() {
@@ -11,15 +11,17 @@ class HostActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setActionBar(toolbar)
+        setSupportActionBar(toolbar)
 
-        fragment = AuthFragment()
+        // TODO: make MainActivity to host initial fragment
+        fragment = MovieDetailFragment()
 
         fragment?.let {
             title = it.title ?: getString(R.string.app_name)
-            val transaction = fragmentManager.beginTransaction()
+            val transaction = supportFragmentManager.beginTransaction()
             transaction.add(R.id.container, it)
             transaction.commit()
         }
+
     }
 }

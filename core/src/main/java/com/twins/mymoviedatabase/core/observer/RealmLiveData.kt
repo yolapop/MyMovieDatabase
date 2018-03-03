@@ -1,4 +1,4 @@
-package com.twins.mymoviedatabase.core.data
+package com.twins.mymoviedatabase.core.observer
 
 import android.arch.lifecycle.LiveData
 import io.realm.RealmChangeListener

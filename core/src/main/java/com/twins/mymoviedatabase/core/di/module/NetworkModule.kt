@@ -1,6 +1,7 @@
-package com.twins.mymoviedatabase.core.injection.module
+package com.twins.mymoviedatabase.core.di.module
 
-import com.twins.mymoviedatabase.core.config.Constants
+import com.twins.mymoviedatabase.core.config.TmdbConstants
+import com.twins.mymoviedatabase.core.netapi.LiveDataCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -23,7 +24,7 @@ object NetworkModule {
             val original = chain.request()
             val request = original.newBuilder()
                     .header("Content-Type", "application/json;charset=utf-8")
-                    .header("Authorization", "Bearer ${Constants.API_KEY_4}")
+                    .header("Authorization", "Bearer ${TmdbConstants.API_KEY_4}")
                     .method(original.method(), original.body())
                     .build()
             chain.proceed(request)
@@ -41,11 +42,12 @@ object NetworkModule {
     @JvmStatic
     @Singleton
     @Provides
-    fun provideRetrofit(client: OkHttpClient, factory: GsonConverterFactory): Retrofit {
+    fun provideRetrofit(client: OkHttpClient, gsonFactory: GsonConverterFactory): Retrofit {
         return Retrofit.Builder()
-                .baseUrl(Constants.API_URL)
+                .baseUrl(TmdbConstants.API_URL)
                 .client(client)
-                .addConverterFactory(factory)
+                .addConverterFactory(gsonFactory)
+                .addCallAdapterFactory(LiveDataCallAdapterFactory())
                 .build()
     }
 

@@ -9,7 +9,7 @@ import com.twins.mymoviedatabase.ui.view.state.TextViewState
 import com.twins.mymoviedatabase.ui.view.state.ViewBaseState
 
 /**
- * Bind a [android.widget.TextView] with [com.twins.mymoviedatabase.ui.view.state.TextViewState]
+ * Bind a [com.twins.mymoviedatabase.ui.view.state.TextViewState] to [android.widget.TextView]
  */
 object TextViewBinder : ViewBinder<TextView, TextViewState> {
 

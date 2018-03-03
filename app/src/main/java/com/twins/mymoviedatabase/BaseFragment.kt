@@ -1,11 +1,14 @@
 package com.twins.mymoviedatabase
 
+import android.arch.lifecycle.ViewModel
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.twins.mymoviedatabase.core.netapi.Api
-import dagger.android.DaggerFragment
+import com.twins.mymoviedatabase.core.viewmodel.ViewModelFactory
+import dagger.android.support.DaggerFragment
 import io.realm.Realm
 import javax.inject.Inject
 
@@ -17,6 +20,8 @@ open class BaseFragment : DaggerFragment() {
     lateinit var api: Api
     @Inject
     lateinit var realm: Realm
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
 
     open var layoutRes: Int? = null
     open var title: CharSequence? = null
@@ -27,6 +32,11 @@ open class BaseFragment : DaggerFragment() {
             }
         }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        observeData()
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return layoutRes?.let {
             inflater.inflate(it, container, false)
@@ -36,6 +46,15 @@ open class BaseFragment : DaggerFragment() {
     override fun onDestroy() {
         super.onDestroy()
         realm.close()
+    }
+
+    /**
+     * Call data observers in here. This method will be called in [onCreate].
+     */
+    open fun observeData() {}
+
+    fun <M : ViewModel> getViewModel(klass : Class<M>): M {
+        return ViewModelProviders.of(this, viewModelFactory)[klass]
     }
 
 }

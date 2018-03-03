@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">@color/md_yellow_A200</item>
+        <item name="android:colorPrimaryDark">@color/md_yellow_A200_dark</item>
+        <item name="android:colorAccent">@color/md_pink_200</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.ActionBar</item>
+        <item name="android:textColorPrimary">@color/md_lime_900</item>
+        <item name="android:colorPrimary">@color/md_yellow_A200</item>
+        <item name="android:colorPrimaryDark">@color/md_yellow_A200_dark</item>
+        <item name="android:colorAccent">@color/md_pink_200</item>
+    </style>
+
+</resources>

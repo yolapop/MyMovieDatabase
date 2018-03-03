@@ -1,4 +1,4 @@
-package com.twins.mymoviedatabase.core.injection.scope
+package com.twins.mymoviedatabase.core.di.scope
 
 import javax.inject.Scope
 

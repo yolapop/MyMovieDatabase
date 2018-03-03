@@ -27,6 +27,7 @@ class Api @Inject constructor(private val retrofit: Retrofit) {
     }
 }
 
+// TODO: maybe you don't need this
 inline fun <T : BaseResponse> Call<T>.result(crossinline result: (T?) -> Unit) {
     Single.fromCallable {
         val response = this@result.execute()

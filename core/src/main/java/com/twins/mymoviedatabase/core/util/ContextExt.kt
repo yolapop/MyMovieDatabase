@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable
 import android.support.annotation.*
 import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableWrapper
+import android.util.TypedValue
 import android.widget.Toast
 
 /**
@@ -73,4 +74,8 @@ fun Context.dimensionPixelOffset(@DimenRes res: Int): Int {
 
 fun Context.dimensionPixelSize(@DimenRes res: Int): Int {
     return resources.getDimensionPixelSize(res)
+}
+
+fun Context.dpToPx(value: Float): Float {
+    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, resources.displayMetrics)
 }

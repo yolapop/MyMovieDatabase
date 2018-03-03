@@ -3,7 +3,7 @@ package com.twins.mymoviedatabase.core.config
 /**
  * Created by bukalapak on 10/26/17.
  */
-object Constants {
+object TmdbConstants {
 
     const val API_URL = "https://api.themoviedb.org"
 

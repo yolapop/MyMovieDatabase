@@ -41,5 +41,3 @@ data class NowPlaying(
         return result
     }
 }
-
-data class Dates(var maximum: Date? = null, var minimum: Date?)

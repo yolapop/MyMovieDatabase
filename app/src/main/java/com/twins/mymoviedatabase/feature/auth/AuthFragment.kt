@@ -1,4 +1,4 @@
-package com.twins.mymoviedatabase.auth.fragment
+package com.twins.mymoviedatabase.feature.auth
 
 import android.os.Bundle
 import android.view.View
@@ -28,6 +28,7 @@ class AuthFragment : BaseFragment() {
         btnAuth.setOnClickListener { doAuth() }
     }
 
+    // TODO: refactor this using live data & viewmodel
     private fun doAuth() {
         activity?.toastShort("api $api")
         api.service(AuthenticationService::class.java)

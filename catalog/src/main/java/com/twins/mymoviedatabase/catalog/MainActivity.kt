@@ -7,6 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.mikepenz.fastadapter.commons.adapters.FastItemAdapter
 import com.twins.mymoviedatabase.ui.item.ViewItem
+import com.twins.mymoviedatabase.ui.util.Frame
+import com.twins.mymoviedatabase.ui.view.binder.TextViewBinder
+import com.twins.mymoviedatabase.ui.view.state.TextViewState
+import com.twins.mymoviedatabase.ui.view.state.ViewBaseState
 import kotlinx.android.synthetic.main.recycler_view.*
 
 class MainActivity : Activity() {
@@ -23,6 +27,10 @@ class MainActivity : Activity() {
     private fun createCatalogAdapter(): FastItemAdapter<ViewItem<*>> {
         val adapter = FastItemAdapter<ViewItem<*>>()
         val titleMap = createNameMapping()
+        val itemState = TextViewState().apply {
+            minHeight = ViewBaseState.MIN_HEIGHT_LIST
+            padding = Frame()
+        }
         val items = titleMap.map { (key, _) -> ViewItem<TextView>(TextView::class.hashCode(),
                 { ctx, parent ->
                     TextView(ctx).apply {
@@ -31,6 +39,7 @@ class MainActivity : Activity() {
                     }
         }).withBinder { view, viewItem ->
             view.text = key
+            TextViewBinder.bind(view, itemState)
         }}
         adapter.set(items)
         return adapter

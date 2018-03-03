@@ -1,4 +1,4 @@
-package com.twins.mymoviedatabase.core.injection.module
+package com.twins.mymoviedatabase.core.di.module
 
 import dagger.Module
 import dagger.Provides
