@@ -1,5 +1,6 @@
 package com.twins.mymoviedatabase
 
+import com.facebook.stetho.Stetho
 import com.twins.mymoviedatabase.di.component.DaggerApplicationComponent
 import com.twins.mymoviedatabase.di.module.ApplicationModule
 import dagger.android.AndroidInjector
@@ -14,7 +15,8 @@ class App : DaggerApplication() {
     override fun onCreate() {
         super.onCreate()
         INSTANCE = this
-        Realm.init(this)
+        setupRealm()
+        setupStetho()
     }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
@@ -22,6 +24,14 @@ class App : DaggerApplication() {
                 .builder()
                 .applicationModule(ApplicationModule(this))
                 .create(this)
+    }
+
+    private fun setupRealm() {
+        Realm.init(this)
+    }
+
+    private fun setupStetho() {
+        Stetho.initializeWithDefaults(this)
     }
 
     companion object {

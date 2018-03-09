@@ -6,9 +6,14 @@ import android.support.v4.widget.TextViewCompat
 import android.widget.TextView
 
 /**
- * Set text appearance, more complete than Android default
+ * Set text appearance, more complete than Android default. This will set below properties:
+ *     1. All text properties from style (e.g. textSize, textStyle, textAllCaps)
+ *     2. Font
+ *     3. Line spacing
+ *     4. Letter spacing
+ *     5. Background
  */
-fun TextView.setMTextAppearance(@StyleRes style: Int) {
+fun TextView.setTextStyle(@StyleRes style: Int) {
     TextViewCompat.setTextAppearance(this, style)
     TextViewUtils.setFontFromStyle(this, style)
     TextViewUtils.setLineSpacingExtraFromStyle(this, style)
@@ -18,7 +23,7 @@ fun TextView.setMTextAppearance(@StyleRes style: Int) {
     }
 }
 
-fun TextView.resetTextAppearance() {
+fun TextView.resetTextStyle() {
     setAllCaps(false)
     setLineSpacing(0f, 1f)
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

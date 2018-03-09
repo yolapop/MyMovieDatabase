@@ -1,5 +1,6 @@
 package com.twins.mymoviedatabase.core.di.module
 
+import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.twins.mymoviedatabase.core.config.TmdbConstants
 import com.twins.mymoviedatabase.core.netapi.LiveDataCallAdapterFactory
 import dagger.Module
@@ -29,6 +30,7 @@ object NetworkModule {
                     .build()
             chain.proceed(request)
         }
+        builder.addNetworkInterceptor(StethoInterceptor())
         return builder.build()
     }
 

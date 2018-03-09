@@ -9,7 +9,7 @@ import com.twins.mymoviedatabase.ui.view.state.TextViewState
 import com.twins.mymoviedatabase.ui.view.state.ViewBaseState
 
 /**
- * Bind a [com.twins.mymoviedatabase.ui.view.state.TextViewState] to [android.widget.TextView]
+ * Bind [com.twins.mymoviedatabase.ui.view.state.TextViewState] to [android.widget.TextView]
  */
 object TextViewBinder : ViewBinder<TextView, TextViewState> {
 
@@ -39,13 +39,17 @@ object TextViewBinder : ViewBinder<TextView, TextViewState> {
         setCompoundDrawablesWithIntrinsicBounds(iconLeft, iconTop, iconRight, iconBottom)
     }
 
-    override fun bind(view: TextView, state: TextViewState) = with(view) {
-        setMTextAppearance(state.style)
-        setBackground(state.background)
-        setPadding(state.padding)
-        isEnabled = state.enabled
+    private fun bindText(view: TextView, state: TextViewState) = with(view) {
         val _text = state.text
         text = (_text as? String)?.parseHtml() ?: _text
+    }
+
+    override fun bind(view: TextView, state: TextViewState) = with(view) {
+        setBackground(state.background)
+        setTextStyle(state.style)
+        setPadding(state.padding)
+        isEnabled = state.enabled
+        bindText(this, state)
         bindIcons(this, state)
         setListPreferredItemHeight(state.minHeight == ViewBaseState.MIN_HEIGHT_LIST, state.minHeight)
         setMargins(state.margin)
