@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable
 import android.support.annotation.ColorRes
 import android.support.annotation.DrawableRes
 import android.support.annotation.StyleRes
+import android.view.Gravity
 import com.twins.mymoviedatabase.ui.R
 
 /**
@@ -15,6 +16,8 @@ class TextViewState : ViewBaseState() {
     var style: Int = R.style.Body1
 
     var text: CharSequence? = null
+
+    var textGravity = Gravity.START
 
     /**
      * Left, top, right, and bottom Drawables

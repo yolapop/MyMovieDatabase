@@ -13,7 +13,7 @@ import retrofit2.http.Path
  */
 interface MovieService {
 
-    @GET("/movie/{movie_id}?api_key=${TmdbConstants.API_KEY_3}")
+    @GET("/3/movie/{movie_id}?api_key=${TmdbConstants.API_KEY_3}")
     fun getMovieDetail(@Path("movie_id") id: Long): LiveData<ApiResponse<Movie>>
 
     // TODO: uncomment all of these and use them

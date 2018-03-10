@@ -4,6 +4,9 @@ import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.util.Log
 import com.twins.mymoviedatabase.BaseFragment
+import com.twins.mymoviedatabase.core.data.model.Movie
+import com.twins.mymoviedatabase.core.netapi.NetworkState
+import com.twins.mymoviedatabase.core.observer.reObserve
 
 /**
  * Created by Yolanda-PC on 11/02/2018.
@@ -14,16 +17,16 @@ class MovieDetailFragment : BaseFragment() {
 
     private val viewModel by lazy { getViewModel(MovieDetailViewModel::class.java) }
 
+    private val statusObserver: Observer<NetworkState> = Observer { Log.v("yolapop", it.toString()) }
+    private val movieObserver: Observer<Movie> = Observer { Log.v("yolapop", it.toString()) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.fetchMovieDetail(23)
-    }
-
-    override fun observeData() {
-        // TODO: make some UI
-        viewModel.movieDetailData.observe(this, Observer {
-            Log.v("yolapop", "success: ${it?.success}, code ${it?.code}")
-        })
+        if (savedInstanceState == null) {
+            viewModel.movieDetail.fetchData(123)
+        }
+        viewModel.movieDetail.status.reObserve(this, statusObserver)
+        viewModel.movieDetail.data.reObserve(this, movieObserver)
     }
 
 }

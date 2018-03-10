@@ -49,8 +49,11 @@ object TextViewBinder : ViewBinder<TextView, TextViewState> {
         setTextStyle(state.style)
         setPadding(state.padding)
         isEnabled = state.enabled
+        gravity = state.textGravity
         bindText(this, state)
         bindIcons(this, state)
+        // TODO: maybe wrap this view in FrameLayout so it can use foreground color
+        setSelectableForeground(state.useSelectableForeground)
         setListPreferredItemHeight(state.minHeight == ViewBaseState.MIN_HEIGHT_LIST, state.minHeight)
         setMargins(state.margin)
         requestLayout()

@@ -13,14 +13,16 @@ class HostActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        // TODO: make MainActivity to host initial fragment
-        fragment = MovieDetailFragment()
+        if (savedInstanceState == null) {
+            // TODO: make MainActivity to host initial fragment
+            fragment = MovieDetailFragment()
 
-        fragment?.let {
-            title = it.title ?: getString(R.string.app_name)
-            val transaction = supportFragmentManager.beginTransaction()
-            transaction.add(R.id.container, it)
-            transaction.commit()
+            fragment?.let {
+                title = it.title ?: getString(R.string.app_name)
+                val transaction = supportFragmentManager.beginTransaction()
+                transaction.add(R.id.container, it)
+                transaction.commit()
+            }
         }
 
     }

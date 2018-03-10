@@ -32,26 +32,21 @@ open class BaseFragment : DaggerFragment() {
             }
         }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        observeData()
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return layoutRes?.let {
             inflater.inflate(it, container, false)
         } ?: super.onCreateView(inflater, container, savedInstanceState)
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBoolean("created", true)
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         realm.close()
     }
-
-    /**
-     * Call data observers in here. This method will be called in [onCreate].
-     */
-    open fun observeData() {}
 
     fun <M : ViewModel> getViewModel(klass : Class<M>): M {
         return ViewModelProviders.of(this, viewModelFactory)[klass]

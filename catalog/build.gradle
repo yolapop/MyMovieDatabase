@@ -7,7 +7,7 @@ android {
     compileSdkVersion 27
 
     defaultConfig {
-        applicationId "com.twins.mymoviedatabase.catalogtest"
+        applicationId "com.twins.mymoviedatabase.catalog"
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
