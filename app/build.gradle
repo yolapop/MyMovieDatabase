@@ -10,7 +10,7 @@ kapt {
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '26.0.2'
+    buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.twins.mymoviedatabase"
         minSdkVersion 21
@@ -54,23 +54,25 @@ androidExtensions {
 dependencies {
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2') {
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2') {
         exclude group: 'com.android.support', module: 'support-annotations'
         exclude group: "com.google.code.findbugs"
     }
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
 
     // kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
-    implementation 'com.airbnb:deeplinkdispatch:3.1.1'
+    implementation('com.airbnb:deeplinkdispatch:3.1.1') {
+        exclude group: 'com.squareup.okio', module: 'okio'
+        exclude group: "com.google.code.findbugs"
+    }
     kapt 'com.airbnb:deeplinkdispatch-processor:3.1.1'
 
     // livedata & viewmodel
-    kapt "android.arch.lifecycle:compiler:1.0.0"
-    implementation "android.arch.lifecycle:runtime:1.0.3"
-    implementation "android.arch.lifecycle:extensions:1.0.0"
-    implementation "android.arch.lifecycle:reactivestreams:1.0.0"
+    kapt "android.arch.lifecycle:compiler:1.1.1"
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation "android.arch.lifecycle:reactivestreams:1.1.1"
 
     // dagger
     implementation "com.google.dagger:dagger:$daggerVersion"

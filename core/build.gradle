@@ -38,10 +38,9 @@ dependencies {
     api "com.android.support:support-core-utils:$androidSupportVersion"
 
     // livedata & viewmodel
-    kapt "android.arch.lifecycle:compiler:1.0.0"
-    implementation "android.arch.lifecycle:runtime:1.0.3"
-    implementation "android.arch.lifecycle:extensions:1.0.0"
-    implementation "android.arch.lifecycle:reactivestreams:1.0.0"
+    kapt "android.arch.lifecycle:compiler:1.1.1"
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation "android.arch.lifecycle:reactivestreams:1.1.1"
 
     // dagger
     implementation "com.google.dagger:dagger:$daggerVersion"
