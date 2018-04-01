@@ -61,22 +61,6 @@ dependencies {
     api 'com.mikepenz:fastadapter-extensions:3.0.0@aar'
 
     api project(':core')
-
-    // Litho
-    implementation 'com.facebook.litho:litho-core:0.13.1'
-    implementation 'com.facebook.litho:litho-widget:0.13.1'
-    compileOnly 'com.facebook.litho:litho-annotations:0.13.1'
-
-    kapt 'com.facebook.litho:litho-processor:0.13.1'
-
-    // SoLoader
-    implementation 'com.facebook.soloader:soloader:0.2.0'
-
-    // For integration with Fresco
-    implementation 'com.facebook.litho:litho-fresco:0.13.1'
-
-    // For testing
-    testImplementation 'com.facebook.litho:litho-testing:0.13.1'
 }
 repositories {
     mavenCentral()
