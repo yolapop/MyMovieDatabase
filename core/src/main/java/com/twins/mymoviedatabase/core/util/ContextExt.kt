@@ -8,7 +8,7 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.support.annotation.*
 import android.support.v4.content.ContextCompat
-import android.support.v4.graphics.drawable.DrawableWrapper
+import android.support.v7.graphics.drawable.DrawableWrapper
 import android.util.TypedValue
 import android.widget.Toast
 
