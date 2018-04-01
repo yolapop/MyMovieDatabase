@@ -18,7 +18,6 @@ class HostActivity : BaseActivity() {
             fragment = MovieDetailFragment()
 
             fragment?.let {
-                title = it.title ?: getString(R.string.app_name)
                 val transaction = supportFragmentManager.beginTransaction()
                 transaction.add(R.id.container, it)
                 transaction.commit()

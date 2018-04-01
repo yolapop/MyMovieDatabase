@@ -9,7 +9,7 @@ import com.twins.mymoviedatabase.ui.util.Frame
 /**
  * Created by Yolanda-PC on 16/12/2017.
  */
-open class ViewBaseState {
+open class ViewStateBase {
 
     @DrawableRes
     var background: Int? = null

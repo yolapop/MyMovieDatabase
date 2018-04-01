@@ -8,9 +8,10 @@ import android.view.Gravity
 import com.twins.mymoviedatabase.ui.R
 
 /**
- * A state for TextView related
+ * A state for [android.widget.TextView] and its subclasses that will be bound via
+ * [com.twins.mymoviedatabase.ui.view.binder.TextViewBinder]
  */
-class TextViewState : ViewBaseState() {
+class TextViewState : ViewStateBase() {
 
     @StyleRes
     var style: Int = R.style.Body1

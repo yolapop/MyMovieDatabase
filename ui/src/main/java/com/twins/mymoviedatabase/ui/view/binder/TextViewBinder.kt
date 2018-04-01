@@ -6,12 +6,12 @@ import com.twins.mymoviedatabase.core.util.drawable
 import com.twins.mymoviedatabase.core.util.parseHtml
 import com.twins.mymoviedatabase.ui.util.*
 import com.twins.mymoviedatabase.ui.view.state.TextViewState
-import com.twins.mymoviedatabase.ui.view.state.ViewBaseState
+import com.twins.mymoviedatabase.ui.view.state.ViewStateBase
 
 /**
  * Bind [com.twins.mymoviedatabase.ui.view.state.TextViewState] to [android.widget.TextView]
  */
-object TextViewBinder : ViewBinder<TextView, TextViewState> {
+object TextViewBinder : ViewBinderBase<TextView, TextViewState>() {
 
     private fun bindIcons(view: TextView, state: TextViewState) = with(view) {
         var iconLeft: Drawable? = null
@@ -52,9 +52,7 @@ object TextViewBinder : ViewBinder<TextView, TextViewState> {
         gravity = state.textGravity
         bindText(this, state)
         bindIcons(this, state)
-        // TODO: maybe wrap this view in FrameLayout so it can use foreground color
-        setSelectableForeground(state.useSelectableForeground)
-        setListPreferredItemHeight(state.minHeight == ViewBaseState.MIN_HEIGHT_LIST, state.minHeight)
+        setListPreferredItemHeight(state.minHeight == ViewStateBase.MIN_HEIGHT_LIST, state.minHeight)
         setMargins(state.margin)
         requestLayout()
     }

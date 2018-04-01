@@ -1,7 +1,9 @@
 package com.twins.mymoviedatabase
 
+import android.app.Activity
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -31,6 +33,11 @@ open class BaseFragment : DaggerFragment() {
                 activity?.title = value
             }
         }
+
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        (context as? Activity)?.title = title
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return layoutRes?.let {

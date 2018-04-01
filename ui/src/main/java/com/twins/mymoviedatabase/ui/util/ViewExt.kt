@@ -11,7 +11,7 @@ import android.view.WindowManager
 import android.widget.FrameLayout
 import com.twins.mymoviedatabase.core.util.unwrap
 import com.twins.mymoviedatabase.ui.R
-import com.twins.mymoviedatabase.ui.view.state.ViewBaseState
+import com.twins.mymoviedatabase.ui.view.state.ViewStateBase
 
 /**
  * Created by Yolanda-PC on 16/12/2017.
@@ -67,7 +67,7 @@ fun View.setSelectableForeground(yes: Boolean) {
 
 fun View.setListPreferredItemHeight(yes: Boolean, default: Int? = null) {
     val _minHeight: Int
-    _minHeight = if (yes || default == ViewBaseState.MIN_HEIGHT_LIST) {
+    _minHeight = if (yes || default == ViewStateBase.MIN_HEIGHT_LIST) {
         val value = TypedValue()
         context.theme.resolveAttribute(android.R.attr.listPreferredItemHeight, value, true)
         val metrics = DisplayMetrics()
@@ -85,3 +85,5 @@ fun View.setListPreferredItemHeight(yes: Boolean, default: Int? = null) {
         this.minimumHeight = _minHeight
     }
 }
+
+fun View.wrapInFrameLayout(): FrameLayout = FrameLayout(context).also { it.addView(this) }
