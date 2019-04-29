@@ -1,7 +1,7 @@
 package com.twins.mymoviedatabase.ui.util
 
-import android.support.annotation.StyleRes
 import android.view.View
+import androidx.annotation.StyleRes
 
 /**
  * Created by Yolanda-PC on 17/12/2017.

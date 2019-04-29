@@ -1,13 +1,22 @@
-package com.twins.mymoviedatabase.core.netapi.response
+package com.twins.mymoviedatabase.litho
 
 import com.google.gson.annotations.SerializedName
-import com.twins.mymoviedatabase.core.data.model.Movie
-import java.util.*
+import com.twins.mymoviedatabase.core.config.TmdbConstants
+import com.twins.mymoviedatabase.core.netapi.response.BaseResponse
+import com.twins.mymoviedatabase.core.netapi.response.Dates
+import retrofit2.Call
+import retrofit2.http.GET
+import retrofit2.http.Query
+import java.util.Arrays
 
-/**
- * Created by bukalapak on 11/9/17.
- */
-data class NowPlaying(
+interface MovieService {
+
+    @GET("/3/movie/upcoming?api_key=${TmdbConstants.API_KEY_3}")
+    fun getUpcoming(@Query("page") page: Int): Call<MovieList>
+
+}
+
+data class MovieList(
         var page: Long,
         var results: Array<Movie>? = null,
         var dates: Dates? = null,
@@ -21,7 +30,7 @@ data class NowPlaying(
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
 
-        other as NowPlaying
+        other as MovieList
 
         if (page != other.page) return false
         if (!Arrays.equals(results, other.results)) return false

@@ -16,8 +16,7 @@ package com.twins.mymoviedatabase.core.netapi
  * limitations under the License.
  */
 
-
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import com.twins.mymoviedatabase.core.netapi.response.ApiResponse
 import retrofit2.CallAdapter
 import retrofit2.Retrofit

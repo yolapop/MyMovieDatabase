@@ -1,7 +1,7 @@
 package com.twins.mymoviedatabase.core.viewmodel
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.twins.mymoviedatabase.core.netapi.Api
 import javax.inject.Inject
 

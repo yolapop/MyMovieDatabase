@@ -1,13 +1,13 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.1.51'
+    ext.kotlin_version = '1.3.0'
     repositories {
         jcenter()
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.0'
+        classpath 'com.android.tools.build:gradle:3.3.2'
         classpath "io.realm:realm-gradle-plugin:4.1.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
@@ -16,15 +16,13 @@ buildscript {
     }
 }
 
-ext {
-    daggerVersion = '2.11'
-    androidSupportVersion = '27.1.0'
-}
+apply from: 'dependencies.gradle'
 
 allprojects {
     repositories {
         google()
         jcenter()
+        mavenCentral()
     }
 }
 

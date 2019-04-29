@@ -1,6 +1,6 @@
 package com.twins.mymoviedatabase.core.viewmodel
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 import com.twins.mymoviedatabase.core.netapi.Api
 
 /**

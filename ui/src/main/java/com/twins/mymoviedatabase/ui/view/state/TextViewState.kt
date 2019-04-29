@@ -1,10 +1,10 @@
 package com.twins.mymoviedatabase.ui.view.state
 
 import android.graphics.drawable.Drawable
-import android.support.annotation.ColorRes
-import android.support.annotation.DrawableRes
-import android.support.annotation.StyleRes
 import android.view.Gravity
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
+import androidx.annotation.StyleRes
 import com.twins.mymoviedatabase.ui.R
 
 /**
@@ -29,7 +29,7 @@ class TextViewState : ViewStateBase() {
      * Left, top, right, and bottom Drawable resources
      */
     @DrawableRes
-    var iconResources: Array<Int>? = null
+    var iconRes: Array<Int>? = null
 
     /**
      * Left, top, right, and bottom Drawable tints

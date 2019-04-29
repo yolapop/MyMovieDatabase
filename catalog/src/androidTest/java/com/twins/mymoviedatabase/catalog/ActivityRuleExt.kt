@@ -3,8 +3,8 @@ package com.twins.mymoviedatabase.catalog
 import android.app.Activity
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
-import android.support.test.InstrumentationRegistry
-import android.support.test.rule.ActivityTestRule
+import androidx.test.InstrumentationRegistry
+import androidx.test.rule.ActivityTestRule
 
 /**
  * Created by bukalapak on 11/18/17.

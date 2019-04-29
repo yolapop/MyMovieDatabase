@@ -2,7 +2,7 @@ package com.twins.mymoviedatabase.ui.util
 
 import android.os.Binder
 import android.os.Bundle
-import android.support.v4.app.BundleCompat
+import androidx.core.app.BundleCompat
 import kotlin.reflect.KProperty
 
 /**

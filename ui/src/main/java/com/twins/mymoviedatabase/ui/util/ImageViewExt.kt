@@ -1,9 +1,9 @@
 package com.twins.mymoviedatabase.ui.util
 
 import android.annotation.SuppressLint
-import android.support.annotation.ColorRes
-import android.support.annotation.DrawableRes
 import android.widget.ImageView
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
 import com.bumptech.glide.load.model.GlideUrl
 
 /**

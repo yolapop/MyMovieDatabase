@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="com.twins.mymoviedatabase.HostActivity">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:background="?android:attr/colorPrimary"
         android:minHeight="?android:attr/actionBarSize"

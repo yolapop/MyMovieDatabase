@@ -1,8 +1,7 @@
 package com.twins.mymoviedatabase.catalog
 
-import com.twins.mymoviedatabase.catalog.injection.component.ApplicationComponent
-import com.twins.mymoviedatabase.catalog.injection.component.DaggerApplicationComponent
-import com.twins.mymoviedatabase.catalog.injection.module.ApplicationModule
+import com.twins.mymoviedatabase.catalog.di.component.ApplicationComponent
+import com.twins.mymoviedatabase.catalog.di.module.ApplicationModule
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 

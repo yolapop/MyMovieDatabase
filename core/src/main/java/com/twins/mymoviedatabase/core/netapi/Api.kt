@@ -19,7 +19,7 @@ class Api @Inject constructor(private val retrofit: Retrofit) {
     @Suppress("UNCHECKED_CAST")
     fun <T : Any> service(klass: Class<T>): T {
         val klassName = klass.canonicalName
-        return (serviceCache[klassName] as? T) ?: let {
+        return (serviceCache[klassName!!] as? T) ?: let {
             val s = retrofit.create(klass)
             serviceCache[klassName] = s
             s

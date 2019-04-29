@@ -1,9 +1,9 @@
 package com.twins.mymoviedatabase.ui.util
 
 import android.os.Build
-import android.support.annotation.StyleRes
-import android.support.v4.widget.TextViewCompat
 import android.widget.TextView
+import androidx.annotation.StyleRes
+import androidx.core.widget.TextViewCompat
 
 /**
  * Set text appearance, more complete than Android default. This will set below properties:

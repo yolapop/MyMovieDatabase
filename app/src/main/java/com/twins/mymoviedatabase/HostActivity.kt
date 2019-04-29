@@ -1,7 +1,7 @@
 package com.twins.mymoviedatabase
 
 import android.os.Bundle
-import com.twins.mymoviedatabase.feature.movie.MovieDetailFragment
+import com.twins.mymoviedatabase.feature.litho.UpcomingMoviesFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class HostActivity : BaseActivity() {
@@ -15,7 +15,7 @@ class HostActivity : BaseActivity() {
 
         if (savedInstanceState == null) {
             // TODO: make MainActivity to host initial fragment
-            fragment = MovieDetailFragment()
+            fragment = UpcomingMoviesFragment()
 
             fragment?.let {
                 val transaction = supportFragmentManager.beginTransaction()

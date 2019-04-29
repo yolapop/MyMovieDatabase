@@ -15,7 +15,7 @@
  */
 package com.twins.mymoviedatabase.core.observer
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 
 
 /**

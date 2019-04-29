@@ -2,11 +2,11 @@ package com.twins.mymoviedatabase.core.util
 
 import android.os.Bundle
 import android.os.Parcelable
-import android.support.annotation.LayoutRes
 import android.util.SparseArray
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.LayoutRes
 
 /**
  * Created by bukalapak on 11/16/17.

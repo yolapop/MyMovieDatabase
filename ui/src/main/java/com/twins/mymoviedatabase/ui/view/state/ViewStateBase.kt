@@ -1,9 +1,9 @@
 package com.twins.mymoviedatabase.ui.view.state
 
-import android.support.annotation.DrawableRes
-import android.support.annotation.Px
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.annotation.DrawableRes
+import androidx.annotation.Px
 import com.twins.mymoviedatabase.ui.util.Frame
 
 /**

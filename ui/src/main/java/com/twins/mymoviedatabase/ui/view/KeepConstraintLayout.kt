@@ -3,9 +3,9 @@ package com.twins.mymoviedatabase.ui.view
 import android.content.Context
 import android.os.Bundle
 import android.os.Parcelable
-import android.support.constraint.ConstraintLayout
 import android.util.AttributeSet
 import android.util.SparseArray
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.twins.mymoviedatabase.core.util.restoreKeepChildrenStates
 import com.twins.mymoviedatabase.core.util.saveKeepChildrenStates
 import com.twins.mymoviedatabase.ui.util.ViewState

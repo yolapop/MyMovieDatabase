@@ -4,7 +4,11 @@ import android.graphics.drawable.Drawable
 import android.widget.TextView
 import com.twins.mymoviedatabase.core.util.drawable
 import com.twins.mymoviedatabase.core.util.parseHtml
-import com.twins.mymoviedatabase.ui.util.*
+import com.twins.mymoviedatabase.ui.util.setBackground
+import com.twins.mymoviedatabase.ui.util.setListPreferredItemHeight
+import com.twins.mymoviedatabase.ui.util.setMargins
+import com.twins.mymoviedatabase.ui.util.setPadding
+import com.twins.mymoviedatabase.ui.util.setTextStyle
 import com.twins.mymoviedatabase.ui.view.state.TextViewState
 import com.twins.mymoviedatabase.ui.view.state.ViewStateBase
 
@@ -19,7 +23,7 @@ object TextViewBinder : ViewBinderBase<TextView, TextViewState>() {
         var iconRight: Drawable? = null
         var iconBottom: Drawable? = null
 
-        state.iconResources?.let {
+        state.iconRes?.let {
             iconLeft = context.drawable(it.getOrNull(0))
             iconTop = context.drawable(it.getOrNull(1))
             iconRight = context.drawable(it.getOrNull(2))

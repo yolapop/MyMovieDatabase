@@ -4,20 +4,16 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'realm-android'
 
-kapt {
-    generateStubs = true
-}
-
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    compileSdkVersion compileSdk
+    buildToolsVersion buildToolVersion
     defaultConfig {
         applicationId "com.twins.mymoviedatabase"
-        minSdkVersion 21
-        targetSdkVersion 27
+        minSdkVersion minSdk
+        targetSdkVersion compileSdk
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -26,6 +22,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     splits {
         abi {
             enable true
@@ -35,7 +32,8 @@ android {
         }
     }
 
-    configurations.all {
+    /*configurations.all {
+        resolutionStrategy.force "com.android.support:support-v4:$androidSupportVersion"
         resolutionStrategy.force "com.android.support:appcompat-v7:$androidSupportVersion"
         resolutionStrategy.force "com.android.support:cardview-v7:$androidSupportVersion"
         resolutionStrategy.force "com.android.support:recyclerview-v7:$androidSupportVersion"
@@ -44,35 +42,40 @@ android {
         resolutionStrategy.force "com.android.support:preference-v14:$androidSupportVersion"
         resolutionStrategy.force "com.android.support:customtabs:$androidSupportVersion"
         resolutionStrategy.force "com.android.support:support-annotations:$androidSupportVersion"
-    }
+    }*/
 }
 
-androidExtensions {
+/*androidExtensions {
     experimental = true
+}*/
+
+kapt {
+    generateStubs = true
+    mapDiagnosticLocations = true
 }
+
 
 dependencies {
+    implementation project(':ui')
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2') {
-        exclude group: 'com.android.support', module: 'support-annotations'
-        exclude group: "com.google.code.findbugs"
-    }
+
     testImplementation 'junit:junit:4.12'
+    androidTestImplementation "androidx.test:runner:$runnerVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCoreVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    // kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
-    implementation('com.airbnb:deeplinkdispatch:3.1.1') {
+    /*implementation('com.airbnb:deeplinkdispatch:3.1.1') {
         exclude group: 'com.squareup.okio', module: 'okio'
         exclude group: "com.google.code.findbugs"
     }
-    kapt 'com.airbnb:deeplinkdispatch-processor:3.1.1'
+    kapt 'com.airbnb:deeplinkdispatch-processor:3.1.1'*/
 
     // livedata & viewmodel
-    kapt "android.arch.lifecycle:compiler:1.1.1"
-    implementation "android.arch.lifecycle:extensions:1.1.1"
-    implementation "android.arch.lifecycle:reactivestreams:1.1.1"
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-reactivestreams:$lifecycleVersion"
 
     // dagger
     implementation "com.google.dagger:dagger:$daggerVersion"
@@ -86,10 +89,33 @@ dependencies {
     kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
 
     // rxjava
-    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.5'
-    implementation 'com.artemzin.rxjava:proguard-rules:1.3.3.0'
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
 
-    implementation project(':ui')
+    // Litho
+    api("com.facebook.litho:litho-core:0.25.0") {
+        exclude group: 'com.facebook.infer.annotation', module: 'infer-annotation'
+    }
+    api 'com.facebook.litho:litho-widget:0.25.0'
+    compileOnly 'com.facebook.litho:litho-annotations:0.25.0'
+
+    kapt 'com.facebook.litho:litho-processor:0.25.0'
+
+    // SoLoader
+    implementation 'com.facebook.soloader:soloader:0.5.1'
+
+    // For integration with Fresco
+    implementation 'com.facebook.fresco:fresco:1.10.0'
+    implementation 'com.facebook.litho:litho-fresco:0.25.0'
+
+    // For testing
+    testImplementation 'com.facebook.litho:litho-testing:0.25.0'
+
+    // Sections
+    implementation 'com.facebook.litho:litho-sections-core:0.25.0'
+    implementation 'com.facebook.litho:litho-sections-widget:0.25.0'
+    compileOnly 'com.facebook.litho:litho-sections-annotations:0.25.0'
+
+    kapt 'com.facebook.litho:litho-sections-processor:0.25.0'
 }
 

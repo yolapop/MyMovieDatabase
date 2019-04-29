@@ -6,11 +6,15 @@ import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
-import android.support.annotation.*
-import android.support.v4.content.ContextCompat
-import android.support.v7.graphics.drawable.DrawableWrapper
 import android.util.TypedValue
 import android.widget.Toast
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.annotation.DimenRes
+import androidx.annotation.DrawableRes
+import androidx.annotation.Px
+import androidx.appcompat.graphics.drawable.DrawableWrapper
+import androidx.core.content.ContextCompat
 
 /**
  * Created by bukalapak on 10/2/17.

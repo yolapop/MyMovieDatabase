@@ -1,6 +1,6 @@
 package com.twins.mymoviedatabase.core.netapi.service
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import com.twins.mymoviedatabase.core.config.TmdbConstants
 import com.twins.mymoviedatabase.core.data.model.Configuration
 import com.twins.mymoviedatabase.core.netapi.response.ApiResponse

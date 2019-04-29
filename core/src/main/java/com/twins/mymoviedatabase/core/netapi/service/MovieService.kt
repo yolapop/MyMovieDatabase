@@ -1,11 +1,14 @@
 package com.twins.mymoviedatabase.core.netapi.service
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import com.twins.mymoviedatabase.core.config.TmdbConstants
 import com.twins.mymoviedatabase.core.data.model.Movie
 import com.twins.mymoviedatabase.core.netapi.response.ApiResponse
+import com.twins.mymoviedatabase.core.netapi.response.MovieList
+import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 
 /**
@@ -15,6 +18,12 @@ interface MovieService {
 
     @GET("/3/movie/{movie_id}?api_key=${TmdbConstants.API_KEY_3}")
     fun getMovieDetail(@Path("movie_id") id: Long): LiveData<ApiResponse<Movie>>
+
+    @GET("/3/movie/upcoming?api_key=${TmdbConstants.API_KEY_3}")
+    fun getUpcomingMovies(): LiveData<ApiResponse<MovieList>>
+
+    @GET("/3/movie/upcoming?api_key=${TmdbConstants.API_KEY_3}")
+    fun getUpcoming(@Query("page") page: Int): Call<MovieList>
 
     // TODO: uncomment all of these and use them
     /*@GET("/movie/{movie_id}/account_states")
@@ -73,7 +82,5 @@ interface MovieService {
 
     @GET("/movie/top_rated")
     fun getTopRatedMovies(@Path("movie_id") movieID: Int): Call<Movie>
-
-    @GET("/movie/upcoming")
-    fun getUpcomingMovies(@Path("movie_id") movieID: Int): Call<Movie>*/
+*/
 }

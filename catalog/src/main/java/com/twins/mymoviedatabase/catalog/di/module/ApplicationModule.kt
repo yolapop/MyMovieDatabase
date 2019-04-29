@@ -1,4 +1,4 @@
-package com.twins.mymoviedatabase.catalog.injection.module
+package com.twins.mymoviedatabase.catalog.di.module
 
 import android.content.Context
 import com.twins.mymoviedatabase.catalog.App
@@ -9,7 +9,6 @@ import javax.inject.Singleton
 /**
  * Created by bukalapak on 11/20/17.
  */
-@Singleton
 @Module
 class ApplicationModule(private val app: App) {
 

@@ -1,14 +1,14 @@
 package com.twins.mymoviedatabase.ui.util
 
 import android.content.Context
-import android.support.constraint.ConstraintLayout
-import android.support.v4.content.ContextCompat
 import android.util.DisplayMetrics
 import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.FrameLayout
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import com.twins.mymoviedatabase.core.util.unwrap
 import com.twins.mymoviedatabase.ui.R
 import com.twins.mymoviedatabase.ui.view.state.ViewStateBase

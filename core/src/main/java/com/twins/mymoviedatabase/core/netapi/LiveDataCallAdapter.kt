@@ -15,7 +15,7 @@
  */
 package com.twins.mymoviedatabase.core.netapi
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import com.twins.mymoviedatabase.core.netapi.response.ApiResponse
 import retrofit2.Call
 import retrofit2.CallAdapter

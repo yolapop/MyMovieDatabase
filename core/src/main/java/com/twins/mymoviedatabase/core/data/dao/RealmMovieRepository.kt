@@ -15,7 +15,7 @@ class RealmMovieRepository(private val realm: Realm) : MovieRepository {
         realm.executeTransaction {
             // search genre berdasarkan genre_id
             // assign
-            realm.copyToRealm(movie)
+            //realm.copyToRealm(movie)
         }
         /**
          * TODO:

@@ -1,9 +1,9 @@
 package com.twins.mymoviedatabase.catalog.matcher
 
-import android.support.test.espresso.matcher.BoundedMatcher
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.test.espresso.matcher.BoundedMatcher
 import com.twins.mymoviedatabase.catalog.MovieRectangleCardActivity
 import com.twins.mymoviedatabase.catalog.R
 import com.twins.mymoviedatabase.ui.view.MovieRectangleCard

@@ -3,8 +3,8 @@ package com.twins.mymoviedatabase.ui.util
 import android.annotation.TargetApi
 import android.graphics.Typeface
 import android.os.Build
-import android.support.annotation.StyleRes
 import android.widget.TextView
+import androidx.annotation.StyleRes
 
 /**
  * Created by Yolanda-PC on 17/12/2017.

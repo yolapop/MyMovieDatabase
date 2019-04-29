@@ -2,9 +2,20 @@ package com.twins.mymoviedatabase.util
 
 import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
-import android.support.annotation.*
+import androidx.annotation.ColorRes
+import androidx.annotation.DimenRes
+import androidx.annotation.DrawableRes
+import androidx.annotation.Px
+import androidx.annotation.StringRes
 import com.twins.mymoviedatabase.App
-import com.twins.mymoviedatabase.core.util.*
+import com.twins.mymoviedatabase.core.util.color
+import com.twins.mymoviedatabase.core.util.colorStateList
+import com.twins.mymoviedatabase.core.util.dimension
+import com.twins.mymoviedatabase.core.util.dimensionPixelOffset
+import com.twins.mymoviedatabase.core.util.dimensionPixelSize
+import com.twins.mymoviedatabase.core.util.dpToPx
+import com.twins.mymoviedatabase.core.util.drawable
+import com.twins.mymoviedatabase.core.util.resizeDrawable
 
 /**
  * Global functions that wrap extension functions of Context.

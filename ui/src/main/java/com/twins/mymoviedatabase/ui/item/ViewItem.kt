@@ -1,9 +1,9 @@
 package com.twins.mymoviedatabase.ui.item
 
 import android.content.Context
-import android.support.annotation.IdRes
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.IdRes
 import com.mikepenz.fastadapter.IClickable
 import com.mikepenz.fastadapter.IExpandable
 import com.mikepenz.fastadapter.ISubItem
@@ -32,7 +32,8 @@ class ViewItem<V : View>(
     /**
      * View to rotate when the item is clicked, perfect for expandable animation
      */
-    @IdRes private var idViewToRotate: Int = 0
+    @IdRes
+    private var idViewToRotate: Int = 0
     private var rotation = 0
 
     private var _onItemClickListener: OnClickListener<ViewItem<V>>? = null
@@ -48,8 +49,8 @@ class ViewItem<V : View>(
         _onItemClickListener?.onClick(v, adapter, item, position) ?: true
     }
 
-    private fun getViewToRotate(parent: View): View? {
-        return parent.findViewById(idViewToRotate)
+    private fun getViewToRotate(parent: View?): View? {
+        return parent?.findViewById(idViewToRotate)
     }
 
     override fun withOnItemClickListener(onItemClickListener: OnClickListener<ViewItem<V>>?): ViewItem<V> {

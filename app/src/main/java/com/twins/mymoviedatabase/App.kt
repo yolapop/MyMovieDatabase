@@ -3,6 +3,7 @@ package com.twins.mymoviedatabase
 import com.facebook.stetho.Stetho
 import com.twins.mymoviedatabase.di.component.DaggerApplicationComponent
 import com.twins.mymoviedatabase.di.module.ApplicationModule
+import com.twins.mymoviedatabase.litho.LithoUtils
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 import io.realm.Realm
@@ -17,6 +18,7 @@ class App : DaggerApplication() {
         INSTANCE = this
         setupRealm()
         setupStetho()
+        LithoUtils.setupLitho(this)
     }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {

@@ -1,7 +1,7 @@
 package com.twins.mymoviedatabase.ui.item
 
-import android.support.v7.widget.RecyclerView
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 
 /**
  * Created by bukalapak on 11/9/17.

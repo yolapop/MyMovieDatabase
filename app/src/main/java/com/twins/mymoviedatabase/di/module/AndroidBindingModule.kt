@@ -4,6 +4,7 @@ import com.twins.mymoviedatabase.HostActivity
 import com.twins.mymoviedatabase.core.di.module.DatabaseModule
 import com.twins.mymoviedatabase.core.di.scope.PerActivity
 import com.twins.mymoviedatabase.feature.auth.AuthFragment
+import com.twins.mymoviedatabase.feature.litho.UpcomingMoviesFragment
 import com.twins.mymoviedatabase.feature.movie.MovieDetailFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -19,11 +20,14 @@ abstract class AndroidBindingModule {
     abstract fun hostActivity(): HostActivity
 
     // region FRAGMENTS
-    @ContributesAndroidInjector(modules = arrayOf(DatabaseModule::class))
+    @ContributesAndroidInjector(modules = [DatabaseModule::class])
     abstract fun authFragment(): AuthFragment
 
-    @ContributesAndroidInjector(modules = arrayOf(DatabaseModule::class))
+    @ContributesAndroidInjector(modules = [DatabaseModule::class])
     abstract fun movieDetailFragment(): MovieDetailFragment
+
+    @ContributesAndroidInjector(modules = [DatabaseModule::class])
+    abstract fun movieListFragment(): UpcomingMoviesFragment
     // endregion
 
 }
